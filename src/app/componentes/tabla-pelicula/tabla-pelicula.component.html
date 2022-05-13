@@ -1,0 +1,16 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pelicula of inputTablaPeliculas">
+        <td>{{pelicula.id}}</td>
+        <td>{{pelicula.nombre}}</td>
+        <td><button type="button" class="btn btn-outline-secondary" (click)="mostrarDetallePelicula(pelicula)">VER DETALLE</button></td>
+      </tr>
+    </tbody>
+  </table>

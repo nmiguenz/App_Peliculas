@@ -1,0 +1,13 @@
+.container{
+    height: 65vh;
+}
+
+.listaPaises{
+    height: 75%;
+    overflow-y: scroll;
+}
+
+.paisContainer:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}

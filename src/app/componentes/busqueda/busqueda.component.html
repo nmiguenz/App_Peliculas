@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+  
+  <main role="main">
+  
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Tabla Películas</h1>
+
+        <app-tabla-pelicula [inputTablaPeliculas]="listadoPeliculas" (peliculaSeleccionada)="tomarPeliculaParaDetalle($event)"></app-tabla-pelicula>
+      
+      </div>
+    </div>
+  
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <app-detalle-pelicula [inputDetallePelicula]="peliculaParaMostrar"></app-detalle-pelicula>
+        </div>
+        <div class="col-md-4">
+          <app-pelicula-listado [inputListadoPeliculas]="listadoPeliculas" ></app-pelicula-listado>
+        </div>
+        <div class="col-md-4">
+          <section class="widget clearfix" >
+            <h4 class="widgettitle">Alta actor</h4>
+
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Alta actor</h5>
+                <p class="card-text">Sección que permite cargar un nuevo actor en nuestra base de datos</p>
+                <a class="card-link" [routerLink]="['/altaActor']">ALTA</a>
+              </div>
+            </div>
+            
+          </section>
+        </div>
+      </div>
+  
+      <hr>
+  
+    </div> <!-- /container -->
+  
+  </main>
+  
+  <footer class="container">
+    <p>&copy; Company 2017-2020</p>
+  </footer>
