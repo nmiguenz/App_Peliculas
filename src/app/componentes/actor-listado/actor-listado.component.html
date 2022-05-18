@@ -11,7 +11,7 @@
                     <h6 class="my-0">{{actor.nombre}} <span>{{actor.apellido}}</span></h6>
                     <small class="text-muted">{{actor.edad}}</small>
                     </div>
-                    <button class="btn btn-outline-primary" *ngIf="inputPantalla">DETALLE ACTOR</button>
+                    <button class="btn btn-outline-primary" *ngIf="inputPantalla" (click)="getActorSeleccionado(actor)">DETALLE ACTOR</button>
                     <!-- <span class="text-muted"><img class="float-right" [src]="[pais.flags.png]" alt="" width="84px" height="56px" ></span> -->
             </li>
         </ul>

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Actor } from 'src/app/clases/actor';
 import { FirestoreService } from 'src/app/services/firestore.service';
 
@@ -19,12 +19,12 @@ export class ActorAltaComponent implements OnInit {
 
   constructor(private fb : FormBuilder, public db : FirestoreService) { 
     this.formGroup = this.fb.group({
-      'nombre' : '',
-      'apellido' : '',
-      'alias': '',
-      'edad' :'',
-      'sexo' : '',
-      'nacionalidad' : '',
+      'nombre' : ['',[Validators.required, this.spacesValidator]],
+      'apellido' : ['',[Validators.required]],
+      'alias': ['',[Validators.required, Validators.minLength(4)]],
+      'edad' :['',[Validators.required, Validators.min(12), Validators.max(99)]],
+      'sexo' : ['',[Validators.required]],
+      'nacionalidad' : ['',[Validators.required]],
       'bandera' : ''
     });
   }
@@ -55,6 +55,16 @@ export class ActorAltaComponent implements OnInit {
       this.formGroup.reset();
     }
 
+  }
+
+   // CUSTOM VALIDATOR
+   private spacesValidator(control: AbstractControl): null | object {
+    const nombre = <string>control.value;
+    const spaces = nombre.includes(' ');
+
+    return spaces
+      ? { containsSpaces: true }
+      : null; 
   }
   
 }

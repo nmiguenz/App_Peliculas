@@ -26,8 +26,5 @@ export class ActorListadoComponent implements OnInit {
 
   getActorSeleccionado(detalleActor: Actor){
     this.actorSeleccionado.emit(detalleActor);
-
-    console.log(detalleActor);
-
   }
 }

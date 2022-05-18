@@ -1,1 +1,6 @@
-<p>detalle-actor works!</p>
+<ul class="list-group" *ngIf="inputActor">
+    <li class="list-group-item list-group-item-primary d-flex"><h2>{{inputActor.nombre}} {{inputActor.apellido}}</h2></li>
+    <li class="list-group-item "><span>Edad: </span>{{inputActor.edad}}</li>
+    <li class="list-group-item "><span>Sexo: </span>{{inputActor.sexo}}</li>
+    <li class="list-group-item "><span>Nacionalidad: </span>{{inputActor.nacionalidad.translations.spa.common}}</li>
+  </ul>

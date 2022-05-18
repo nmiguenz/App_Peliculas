@@ -14,20 +14,22 @@ export class ActorPeliculaComponent implements OnInit {
   actorParaMostrar : Actor | any;
   datosPais : {} | any;
   pantalla = true;
+  detalleActor : Actor | any;
 
   constructor(private db : FirestoreService) { }
 
   ngOnInit(): void {
   }
 
+  
   tomarActorParaMostrar(actor: Actor){
     this.actorParaMostrar = actor;
     
     if(this.actorParaMostrar){
-      let nombreCompleto: string = this.actorParaMostrar.apellido;
-      
-      this.peliculasActor(nombreCompleto);
-      this.nacionalidadActor(this.actorParaMostrar)
+      // let nombreCompleto: string = this.actorParaMostrar.apellido;
+      this.peliculasActor(this.actorParaMostrar.apellido);
+      this.nacionalidadActor(this.actorParaMostrar);
+      this.datosActor(this.actorParaMostrar);
 
     }
     else
@@ -44,6 +46,10 @@ export class ActorPeliculaComponent implements OnInit {
 
   nacionalidadActor(actor : Actor){
     this.datosPais = actor.nacionalidad;
+  }
+
+  datosActor(actor : Actor){
+    this.detalleActor = actor;
   }
 
 }
