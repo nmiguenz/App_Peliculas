@@ -6,21 +6,31 @@
     </h4>
     <div class="col listaPaises">
         <ul class="list-group mb-3" *ngFor="let actor of actores">
-              <li class="list-group-item d-flex justify-content-between lh-condensed actorContainer" (click)="getActorSeleccionado(actor)">
+              <li *ngIf="!inputPantalla" class="list-group-item d-flex justify-content-between lh-condensed actorContainer" (click)="getActorSeleccionado(actor,'')">
                     <div>
-                    <h6 class="my-0">{{actor.nombre}} <span>{{actor.apellido}}</span></h6>
-                    <small class="text-muted">{{actor.edad}}</small>
+                        <h6 class="my-0">{{actor.nombre}} <span>{{actor.apellido}}</span></h6>
+                        <small class="text-muted">{{actor.edad}}</small>
                     </div>
-                    <button class="btn btn-outline-primary" *ngIf="inputPantalla" (click)="getActorSeleccionado(actor)">DETALLE ACTOR</button>
                     <!-- <span class="text-muted"><img class="float-right" [src]="[pais.flags.png]" alt="" width="84px" height="56px" ></span> -->
             </li>
+
+            <li *ngIf="inputPantalla" class="list-group-item d-flex justify-content-between lh-condensed actorContainer">
+                <div>
+                    <h6 class="my-0">{{actor.nombre}} <span>{{actor.apellido}}</span></h6>
+                    <small class="text-muted">{{actor.edad}}</small>
+                </div>
+                <button class="btn btn-outline-primary" *ngIf="inputPantalla" (click)="getActorSeleccionado(actor, 'peliculas')">LISTADO PELÍCULAS</button>
+                <button class="btn btn-outline-secondary" *ngIf="inputPantalla" (click)="getActorSeleccionado(actor, 'pais')">DETALLE PAÍS</button>
+                <button class="btn btn-outline-warning" *ngIf="inputPantalla" (click)="getActorSeleccionado(actor, 'actor')">DETALLE ACTOR</button>
+                <!-- <span class="text-muted"><img class="float-right" [src]="[pais.flags.png]" alt="" width="84px" height="56px" ></span> -->
+        </li>
         </ul>
     </div>
     
     <!-- <div class="col mt-3">
     <form class="card p-2">
         <div class="input-group">
-        <input type="text" class="form-control" placeholder="Pa�s de origen">
+        <input type="text" class="form-control" placeholder="Pa�s de origen">
         <div class="input-group-append">
             <button type="submit" class="btn btn-secondary">Buscar</button>
         </div>

@@ -33,9 +33,9 @@ export class PeliculaAltaComponent implements OnInit {
     
   }
 
-  obtenerActorSeleccionado(actorSeleccionado : Actor){
-    this.actor = actorSeleccionado;
-    this.peliculaGroup.controls.actor.setValue(actorSeleccionado.nombre + ' ' + actorSeleccionado.apellido); 
+  obtenerActorSeleccionado(data : any){
+    this.actor = data.actor;
+    this.peliculaGroup.controls.actor.setValue(data.actor.nombre + ' ' + data.actor.apellido); 
   }
 
   async altaPelicula(){

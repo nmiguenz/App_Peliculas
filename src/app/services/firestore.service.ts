@@ -67,7 +67,7 @@ export class FirestoreService {
     }
   }
 
-  async getById(collectionName:string, id:string) {
+  async getDocById(collectionName:string, id:string) {
     try {
       return await this.db.collection(collectionName).doc(id).get();
     } catch (error) {

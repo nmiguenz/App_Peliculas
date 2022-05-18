@@ -12,7 +12,8 @@ export class ActorListadoComponent implements OnInit {
 
   actores : Actor[] = [];
   @Input() inputPantalla : boolean = false;
-  @Output() actorSeleccionado : EventEmitter<any>= new EventEmitter<any>(); 
+  @Output() actorSeleccionado : EventEmitter<any>= new EventEmitter<any>();
+  
 
   constructor(public srv: FirestoreService) { }
 
@@ -24,7 +25,9 @@ export class ActorListadoComponent implements OnInit {
     }));
   }
 
-  getActorSeleccionado(detalleActor: Actor){
-    this.actorSeleccionado.emit(detalleActor);
+  getActorSeleccionado(detalleActor: Actor, accionSeleccionada:string){
+    this.actorSeleccionado.emit({actor: detalleActor, accion: accionSeleccionada});
+
   }
+ 
 }

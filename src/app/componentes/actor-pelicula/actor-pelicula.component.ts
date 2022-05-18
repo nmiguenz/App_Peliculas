@@ -22,18 +22,23 @@ export class ActorPeliculaComponent implements OnInit {
   }
 
   
-  tomarActorParaMostrar(actor: Actor){
-    this.actorParaMostrar = actor;
-    
-    if(this.actorParaMostrar){
-      // let nombreCompleto: string = this.actorParaMostrar.apellido;
-      this.peliculasActor(this.actorParaMostrar.apellido);
-      this.nacionalidadActor(this.actorParaMostrar);
-      this.datosActor(this.actorParaMostrar);
+  tomarActorParaMostrar(data: any){
+    this.actorParaMostrar = data.actor;
 
+    
+    switch (data.accion) {
+      case 'peliculas':
+        this.peliculasActor(this.actorParaMostrar.apellido);
+        break;
+      case 'pais':
+        this.nacionalidadActor(this.actorParaMostrar);
+        break;
+      case 'actor':
+        this.datosActor(this.actorParaMostrar);
+        break;
     }
-    else
-      console.log('No están bien cargados los datos');
+      // let nombreCompleto: string = this.actorParaMostrar.apellido;
+
   }
 
   peliculasActor(actor : string){

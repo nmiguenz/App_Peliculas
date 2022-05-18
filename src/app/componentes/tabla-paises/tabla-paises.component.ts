@@ -15,8 +15,6 @@ export class TablaPaisesComponent implements OnInit {
   constructor(private http: HttpService) {
      http.getPaises().subscribe((listaPaises)=>{
       this.paises = listaPaises;
-
-      console.log(this.paises);
     });
 
     // http.getPeliculas().subscribe((pelissss =>{
