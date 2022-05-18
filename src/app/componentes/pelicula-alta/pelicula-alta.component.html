@@ -31,11 +31,10 @@
               <label for="apellido">Tipo</label>
               <select class="custom-select d-block w-100" id="tipo" formControlName="tipo" required>
                 <option value="">Elegir...</option>
-                <option value="terror">Terror</option>
-                <option value="cienciaFiccion">Ciencia ficción</option>
-                <option value="romantica">Romántica</option>
-                <option value="drama">Drama</option>
-                <option value="drama">Infantil</option>
+                <option value="Terror">Terror</option>
+                <option value="Ciencia Ficcion">Ciencia ficción</option>
+                <option value="Romantica">Romántica</option>
+                <option value="Drama">Drama</option>
                 <option value="otro">Otro</option>
               </select>
               <div class="invalid-feedback">
@@ -77,7 +76,7 @@
 
           <div class="mb-3">
             <label for="fotoPelicula">Flyer</label>
-            <input type="text" class="form-control" id="fotoPelicula" placeholder="Ingrese un link con la foto de la película (momentaneo)" formControlName="fotoPelicula"  required>
+            <input type="file" class="form-control" id="fotoPelicula" placeholder="Ingrese un link con la foto de la película (momentaneo)" formControlName="fotoPelicula" (change)="obtnerImgBase64($event)"  required>
             <div class="invalid-feedback">
               Por favor ingrese un país.
             </div>

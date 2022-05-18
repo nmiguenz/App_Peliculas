@@ -6,11 +6,12 @@
     </h4>
     <div class="col listaPaises">
         <ul class="list-group mb-3" *ngFor="let actor of actores">
-              <li class="list-group-item d-flex justify-content-between lh-condensed paisContainer" (click)="getActorSeleccionado(actor)">
+              <li class="list-group-item d-flex justify-content-between lh-condensed actorContainer" (click)="getActorSeleccionado(actor)">
                     <div>
                     <h6 class="my-0">{{actor.nombre}} <span>{{actor.apellido}}</span></h6>
                     <small class="text-muted">{{actor.edad}}</small>
                     </div>
+                    <button class="btn btn-outline-primary" *ngIf="inputPantalla">DETALLE ACTOR</button>
                     <!-- <span class="text-muted"><img class="float-right" [src]="[pais.flags.png]" alt="" width="84px" height="56px" ></span> -->
             </li>
         </ul>

@@ -1,6 +1,6 @@
 <div class="col-md-4">
     <h2><strong>Detalle</strong></h2>
-    <div class="card" style="width: 18rem;">
+    <div class="card" *ngIf="inputDetallePelicula" style="width: 18rem;">
         <img class="card-img-top" [src]="inputDetallePelicula.fotoPelicula" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{inputDetallePelicula.nombre}}</h5>

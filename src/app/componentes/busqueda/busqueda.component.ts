@@ -14,7 +14,7 @@ export class BusquedaComponent implements OnInit {
   
   constructor(private db : FirestoreService) {
 
-    this.peliculaParaMostrar = new Pelicula(0,'El Cabellero de la noche','Accion','13/08/2008',1500000,'https://image.tmdb.org/t/p/original/tSIH3DTA4oFQDhPaJgHxxQZoqHh.jpg','Christian Bale');
+    // this.peliculaParaMostrar = new Pelicula(0,'El Cabellero de la noche','Accion','13/08/2008',1500000,'https://image.tmdb.org/t/p/original/tSIH3DTA4oFQDhPaJgHxxQZoqHh.jpg','Christian Bale');
 
     //this.listadoPeliculas= [
       // {id:1, nombre: "It", tipo: "Terror", fechaEstreno:"18/11/1990", cantidadPublico:500, fotoPelicula:"https://es.web.img3.acsta.net/medias/nmedia/18/87/80/19/19961693.jpg"},
@@ -35,7 +35,6 @@ export class BusquedaComponent implements OnInit {
   getPeliculas(){
     this.db.getCollection('peliculas').then( (ref:any) => ref.subscribe((listadoRef:any) => {
       listadoRef.forEach((element : any) => {
-        console.log(element.payload.doc.data());
         this.listadoPeliculas.push(element.payload.doc.data());
       });
      }));

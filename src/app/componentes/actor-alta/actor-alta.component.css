@@ -4,3 +4,10 @@
   }
   
 .lh-condensed { line-height: 1.25; }
+
+img{
+  width: 8rem;
+  height: 8rem;
+  margin-top: 1.2rem;
+  margin-left: 2.2rem;
+}

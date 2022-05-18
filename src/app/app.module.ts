@@ -21,6 +21,10 @@ import { TablaPaisesComponent } from './componentes/tabla-paises/tabla-paises.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { DetallePaisComponent } from './componentes/detalle-pais/detalle-pais.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     DetallePeliculaComponent,
     TablaPeliculaComponent,
     TablaPaisesComponent,
-    NavbarComponent
+    NavbarComponent,
+    ActorPeliculaComponent,
+    DetalleActorComponent,
+    DetallePaisComponent
   ],
   imports: [
     BrowserModule,

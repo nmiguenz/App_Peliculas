@@ -1,14 +1,15 @@
 import { Actor } from 'src/app/clases/actor';
+
 export class Pelicula {
-    id:number;
+    id:string;
     nombre:string;
     tipo:string;
     fechaEstreno:string;
     cantidadPublico:number;
     fotoPelicula:string;
-    actor: string;
+    actor: Actor;
 
-    public constructor(id:number,nombre:string,tipo:string,fechaEstreno:string,cantidadPublico:number,fotoPelicula:string, actor:string)
+    public constructor(id:string,nombre:string,tipo:string,fechaEstreno:string,cantidadPublico:number,fotoPelicula:string, actor:Actor)
     {
         this.id=id;
         this.nombre=nombre;
@@ -17,7 +18,6 @@ export class Pelicula {
         this.cantidadPublico=cantidadPublico;
         this.fotoPelicula=fotoPelicula;
         this.actor = actor;
-
     }
 
 }

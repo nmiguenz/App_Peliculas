@@ -12,6 +12,8 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 export class ActorAltaComponent implements OnInit {
 
   nacionalidad : {} | any;
+  bandera : string = '';
+  
 
   formGroup :  FormGroup | any;
 
@@ -22,7 +24,8 @@ export class ActorAltaComponent implements OnInit {
       'alias': '',
       'edad' :'',
       'sexo' : '',
-      'nacionalidad' : ''
+      'nacionalidad' : '',
+      'bandera' : ''
     });
   }
 
@@ -31,10 +34,20 @@ export class ActorAltaComponent implements OnInit {
   obtenerNacionalidadActor(paisSeleeccionado : any){
     this.nacionalidad = paisSeleeccionado;
     this.formGroup.controls.nacionalidad.setValue(paisSeleeccionado.translations.spa.common); 
+    this.bandera = this.nacionalidad.flags.png; 
+
   }
 
   async altaActor(){
     let actor : Actor = this.formGroup.value;
+
+    // //Seteo de campos:
+    // actor.nombre = this.formGroup.value.nombre;
+    // actor.apellido = this.formGroup.value.apellido;
+    // actor.alias = this.formGroup.value.alias;
+    // actor.edad = this.formGroup.value.edad;
+    // actor.sexo = this.formGroup.value.sexo;
+    actor.nacionalidad = this.nacionalidad;
     
     let res = await this.db.alta(actor,'Actor');
     

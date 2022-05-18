@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActorAltaComponent } from './componentes/actor-alta/actor-alta.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { ActorPeliculaComponent } from './componentes/actor-pelicula/actor-pelicula.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'altaPelicula',
     component:PeliculaAltaComponent
+  },
+  {
+    path:'actorPelicula',
+    component:ActorPeliculaComponent
   }
 ];
 

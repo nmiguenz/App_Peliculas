@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Actor } from 'src/app/clases/actor';
 import { Pelicula } from 'src/app/clases/pelicula';
 
 @Component({
@@ -8,11 +9,12 @@ import { Pelicula } from 'src/app/clases/pelicula';
 })
 export class PeliculaListadoComponent implements OnInit {
 
-  @Input() inputListadoPeliculas!: Pelicula[];
+  @Input() inputListadoPeliculas : Pelicula[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

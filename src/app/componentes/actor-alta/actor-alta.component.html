@@ -68,13 +68,20 @@
               </div>
             </div>
           </div>
-  
-          <div class="mb-3">
-            <label for="nacionalidad">Nacionalidad</label>
-            <input type="text" class="form-control" id="nacionalidad" placeholder="Ingrese una nacionalidad" formControlName="nacionalidad"  required readonly>
-            <div class="invalid-feedback">
-              Por favor ingrese un país.
+          
+          <div class="row">
+            <div class="col-md-9 mb-3">
+              <label for="nacionalidad">Nacionalidad</label>
+              <input type="text" class="form-control" id="nacionalidad" placeholder="Ingrese una nacionalidad" formControlName="nacionalidad"  required readonly>
+              <div class="invalid-feedback">
+                Por favor ingrese un país.
+              </div>
             </div>
+
+            <div class="col-md-3 mb-3">
+              <img *ngIf="bandera" [src]="bandera" alt="">
+            </div>
+
           </div>
 
           <hr class="mb-4">

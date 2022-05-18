@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/practica-parcial",
     "ignore": [
       "firebase.json",
       "**/.*",
